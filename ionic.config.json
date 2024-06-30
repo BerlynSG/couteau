@@ -1,0 +1,8 @@
+{
+  "name": "Couteau",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "1fed5a99"
+}
