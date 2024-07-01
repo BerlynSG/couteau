@@ -7,8 +7,7 @@ ion-menu-button {
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 52px;
 }
 
 #container strong {
@@ -27,8 +26,4 @@ ion-menu-button {
   text-decoration: none;
 }
 
-img {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
+

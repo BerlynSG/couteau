@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="name"></ion-input>
+    </ion-item>
+    
+    <ion-button (click)="buscar()">Buscar</ion-button>
+    <ion-list>
+      <ion-item *ngFor="let item of uni">
+          <h3 style="margin-right: auto;">{{ item.name }}</h3>
+          <ion-accordion-group>
+            <ion-accordion value="first">
+              <ion-item slot="header" color="light">
+                <ion-label>Dominios</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                <ion-list>
+                  <ion-item *ngFor="let dominio of item.domains">
+                    <p>{{ dominio }}</p>
+                  </ion-item>
+                </ion-list>
+              </div>
+            </ion-accordion>
+            <ion-accordion value="second">
+              <ion-item slot="header" color="light">
+                <ion-label>Páginas web</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                <ion-list>
+                  <ion-item *ngFor="let web of item.web_pages">
+                    <a href="{{ web }}">{{ web }}</a>
+                  </ion-item>
+                </ion-list>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

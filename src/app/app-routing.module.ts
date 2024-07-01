@@ -8,8 +8,28 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
+    path: 'folder',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'genero',
+    loadChildren: () => import('./genero/genero.module').then( m => m.GeneroPageModule)
+  },
+  {
+    path: 'edad',
+    loadChildren: () => import('./edad/edad.module').then( m => m.EdadPageModule)
+  },
+  {
+    path: 'universidad',
+    loadChildren: () => import('./universidades/universidad.module').then( m => m.UniversidadPageModule)
+  },
+  {
+    path: 'tiempo',
+    loadChildren: () => import('./tiempo/tiempo.module').then( m => m.TiempoPageModule)
+  },
+  {
+    path: 'contratame',
+    loadChildren: () => import('./contratame/contratame.module').then( m => m.ContratamePageModule)
   }
 ];
 
